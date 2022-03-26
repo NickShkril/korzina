@@ -24,6 +24,7 @@ public class BucketServiceImpl implements BucketService {
     @Override
     public Bucket add(int id) {
         Bucket newBucket = new Bucket(id);
+        bucketList.put("AnyKey", newBucket);
         return newBucket;
     }
 

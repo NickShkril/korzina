@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/store")
+@RequestMapping("/store/order")
 public class BucketController {
     private final BucketService bucketService;
 
