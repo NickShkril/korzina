@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/store/order")
 public class BucketController {
+
     private final BucketService bucketService;
 
     public BucketController(BucketService bucketService) {
@@ -17,17 +18,16 @@ public class BucketController {
     }
 
     @GetMapping(path = "/add")
-    public String add(@RequestParam("id") int id) {
-        Bucket result = bucketService.add(id);
-        String message = "Объект " + result.getItem() + " " + " успешно добавлен";
-        return message;
+    public List<Integer> add(@RequestParam List<Integer> id) {
+        return bucketService.add(id);
+
     }
 
     @GetMapping(path = "/get")
-    public Collection<Bucket> get() {
+    public List<Integer> get() {
         return bucketService.get();
     }
-    }
+}
 
 
 

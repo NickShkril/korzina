@@ -1,9 +1,9 @@
 package pro.sky.korzina;
 
-import java.util.Collection;
+
+import java.util.List;
 
 public interface BucketService {
-    Bucket add(int id);
-
-    Collection<Bucket> get();
+    List<Integer> add(List<Integer> idItems);
+    List<Integer> get();
 }
